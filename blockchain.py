@@ -27,4 +27,5 @@ add_value(last_transaction=get_last_blockchain_value(),
           transaction_amount=get_user_input())
 add_value(get_user_input(), get_last_blockchain_value())
 
+""" Output blockain into console """
 print(blockchain)
