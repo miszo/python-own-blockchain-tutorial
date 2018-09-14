@@ -17,22 +17,34 @@ def add_value(transaction_amount, last_transaction=[1]):
     blockchain.append([last_transaction, transaction_amount])
 
 
-def get_user_input():
+def get_transaction_value():
     """ Asks user for transaction amount and returns it as a float """
     return float(input('Your transaction amount please: '))
 
 
-""" Get the first transaction input and add value to the blockchain """
-add_value(get_user_input())
+def get_user_choice():
+    return input('Your choice: ')
 
-while True:
-    tx_amount = get_user_input()
-    add_value(tx_amount, get_last_blockchain_value())
 
+def print_blockchain_elements():
     """ Output blockain into console """
     for block in blockchain:
         print('Outputting block')
         print(block)
         print('-'*10)
+
+""" Get the first transaction input and add value to the blockchain """
+add_value(get_transaction_value())
+
+while True:
+    print('Please choose')
+    print('1: Add a new transaction value')
+    print('2: Output the blockchain blocks')
+    user_choice = get_user_choice()
+    if user_choice == '1':
+        tx_amount = get_transaction_value()
+        add_value(tx_amount, get_last_blockchain_value())
+    else:
+        print_blockchain_elements()
 
 print('Done!')
