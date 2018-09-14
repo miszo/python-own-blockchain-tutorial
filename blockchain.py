@@ -28,4 +28,9 @@ add_value(last_transaction=get_last_blockchain_value(),
 add_value(get_user_input(), get_last_blockchain_value())
 
 """ Output blockain into console """
-print(blockchain)
+for block in blockchain:
+    print('Outputting block')
+    print(block)
+    print('-'*10)
+
+print('Outputing blockchain done!')
